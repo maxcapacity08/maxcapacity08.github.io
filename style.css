@@ -1,6 +1,22 @@
 .izquierda{
+    text-align: center;
     background-color: black;
     width: 33%;
     height: 28rem;
-    
+    color: white;
+    border-radius: .8rem;
+    padding: 8px;
+    margin: 10px;
+}
+
+.right-block{
+    text-align: center;
+    background-color: rgb(42, 112, 59);
+    width: 33%;
+    height: 28rem;
+    color: white;
+    border-radius: .8rem;
+    padding: 8px;
+    margin: 10px;
+    float: right;
 }
