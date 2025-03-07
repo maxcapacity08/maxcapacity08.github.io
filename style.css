@@ -1,23 +1,206 @@
-
-.izquierda{
-    text-align: center;
-    background-color: rgb(0,0,0);
-    width: 33%;
-    height: 28rem;
-    color: rgb(255,255,255);
-    border-radius: .8rem;
-    padding: 8px;
-    margin: 10px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.right-block{
+body {
+  font-family: sans-serif; /* Choose a mobile-friendly font */
+  line-height: 1.6;
+}
+
+.left-block,
+.right-block {
+  text-align: center;
+  width: 90%; /* Full width on small screens */
+  max-width: 400px; /* Limit width on larger screens */
+  height: auto; /* Adjust height automatically */
+  color: #ffffff;
+  border-radius: 0.8rem;
+  padding: 16px;
+  margin: 10px auto; /* Center the blocks */
+}
+
+.left-block {
+  background-color: #000000;
+}
+
+.right-block {
+  background-color: rgb(42, 112, 59);
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+  background-color: rgb(11, 49, 85);
+  height: auto; /* Adjust height automatically */
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  height: auto; /* Adjust height automatically */
+  background-color: #b388eb;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+/* .mb-nav a {
+  padding: 10px 16px;
+  background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+  color: linen;
+  text-decoration: none; */
+/* display: block;  Stack links on small screens */
+/* margin-bottom: 5px;
+} */
+
+main {
+  display: flex;
+  flex-direction: column; /* Stack blocks vertically */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#confirma {
+  padding: 10px 16px;
+  margin-right: 0; /* Remove right margin */
+  margin-bottom: 10px; /* Add bottom margin */
+  background: -webkit-linear-gradient(45deg, #3f87a6, #ebf8e1, #f69d3c);
+  background: linear-gradient(45deg, #3f87a6, #ebf8e1, #f69d3c);
+  border-radius: 20px;
+  display: block; /* Full width button */
+  text-align: center;
+}
+
+/* General styles (existing styles) */
+
+.hamburger {
+  display: none; /* Hide by default */
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #fff; /* Adjust color as needed */
+}
+
+/* About page styles */
+.about-me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.profile-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.about-text {
+  text-align: justify;
+  max-width: 800px;
+}
+
+.about-text h2 {
+  margin-bottom: 10px;
+}
+
+#cat-container {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  margin-top: 20px;
+}
+
+#cat-container canvas {
+  border-radius: 8px;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.loader {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  color: #888;
+}
+
+/* Media query for small screens */
+@media (max-width: 430px) {
+  .mn-nav {
+    display: none; /* Hide navigation */
+    flex-direction: column;
+    position: absolute;
+    top: 75px; /* Adjust based on header height */
+    left: 0;
+    width: 100%;
+    background-color: #405868d5; /* Adjust color as needed */
     text-align: center;
-    background-color: rgb(42, 112, 59);
-    width: 33%;
-    height: 28rem;
-    color: rgb(255,255,255);
-    border-radius: .8rem;
-    padding: 8px;
-    margin: 10px;
-    float: right;
+    z-index: 10; /* Ensure it's on top */
+    transition: all 0.3s ease; /* Smooth transition */
+  }
+  .mn-nav {
+    height: 20vh;
+  }
+
+  .mn-nav a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    font: bold 1em "Poppins", sans-serif;
+    text-decoration: none;
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger icon */
+  }
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .left-block,
+  .right-block {
+    width: 45%; /* Two blocks side by side */
+  }
+
+  main {
+    flex-direction: row; /* Blocks in a row */
+    justify-content: space-around;
+  }
+
+  .mb-nav {
+    display: flex; /* Navigation in a row */
+  }
+
+  .mb-nav a {
+    display: inline-block; /* Display links in a row */
+    margin-bottom: 0;
+  }
+
+  #confirma {
+    display: inline-block;
+  }
+
+  .about-me {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .profile-photo {
+    margin-right: 40px;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .left-block,
+  .right-block {
+    width: 30%; /* Three blocks side by side */
+  }
 }

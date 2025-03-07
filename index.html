@@ -1,71 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <style>
-        h1{
-            text-align: center;
-            color: white;
-            background-color: rgb(11, 49, 85);
-            height: 80px;
-            padding: 25px;
-        }
-        header {
-            display: flex;
-            height: 80px;
-            background-color: #B388EB;
-            justify-content: space-between;
-            
-        }
-        header .mb-nav a{
-            padding:10px 16px;
-            background: linear-gradient (0.25turn,#3f87a6, #ebf8e1, #f69d3c);
-            color: linen;
-                          
-        }
-        
-        main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        #confirma {
-            padding: 8px 24x;
-            background: linear-gradient(45deg, #3f87a6, #ebf8e1, #f69d3c);
-            border-radius: 20px;
-        }
-        
-                   
-                   
-    </style>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>blue-red-and-white</title>
-    <script src="https://kit.fontawesome.com/771e6c66d5.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sansita+Swashed:wght@300..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <script
+      src="https://kit.fontawesome.com/771e6c66d5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sansita+Swashed:wght@300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <div class="mn-nav">
-            <a href="#" alt="">Home</a>
-            <a href="#" alt="">Contact</a>
-            <a href="#" alt="">About</a>
-        </div>
-        <a id="confirma" href="https://fontawesome.com/icons"> <i class="fa-regular fa-font-awesome"></i> Create a Font Awesome kit</a>
+      <div class="hamburger">
+        <i class="fa fa-bars"></i>
+      </div>
+      <nav class="mn-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="#">Contact</a>
+      </nav>
+      <a id="confirma" href="https://fontawesome.com/icons">
+        <i class="fa-regular fa-font-awesome"></i> Create a Font Awesome kit</a
+      >
     </header>
     <main>
-        <div class="izquierda">
-            <h3>this is a header</h3>
-            <p>adding some text inside a paragraph</p>
-        </div>
-        <div class="right-block">
-            <h3>this is a heading r</h3>
-            <p>adding some filling text</p>
-
-        </div>
+      <div class="izquierda">
+        <h3>this is a header</h3>
+        <p>adding some text inside a paragraph</p>
+      </div>
+      <div class="right-block">
+        <h3>this is a heading r</h3>
+        <p>adding some filling text</p>
+      </div>
     </main>
-</body>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.querySelector(".hamburger");
+        const nav = document.querySelector(".mn-nav");
+
+        hamburger.addEventListener("click", function () {
+          nav.style.display = nav.style.display === "block" ? "none" : "block";
+        });
+      });
+    </script>
+  </body>
 </html>
