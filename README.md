@@ -6,3 +6,8 @@
 
 ### i will be getting this info from 
 [The complete full-stack web develoment bootcamp](https://www.udemy.com/course/the-complete-web-development-bootcamp/?referralCode=F2958B9D9447BDFC8244&couponCode=ST10MT30325G2)
+
+### I read this interesting quote today:
+> "The future belongs to those who prepare for it today"
+> Malcolm x
+
