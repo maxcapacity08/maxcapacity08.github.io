@@ -1,14 +1,30 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Hamburger menu
   const hamburger = document.querySelector(".hamburger");
   const nav = document.querySelector(".mn-nav");
+  const navLinks = document.querySelectorAll(".mn-nav a");
 
+  // Toggle menu
   hamburger.addEventListener("click", function () {
     nav.classList.toggle("active");
-    this.setAttribute(
-      "aria-expanded",
-      this.getAttribute("aria-expanded") === "false" ? "true" : "false"
-    );
+    // Accessibility
+    const isExpanded = nav.classList.contains("active");
+    hamburger.setAttribute("aria-expanded", isExpanded);
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", function (e) {
+    if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+      nav.classList.remove("active");
+      hamburger.setAttribute("aria-expanded", false);
+    }
+  });
+
+  // Close menu when link is clicked
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("active");
+      hamburger.setAttribute("aria-expanded", false);
+    });
   });
 
   // Intersection Observer for fade-in animations
