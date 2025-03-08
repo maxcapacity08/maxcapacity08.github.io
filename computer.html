@@ -42,86 +42,13 @@
       <div id="message"></div>
     </div>
     <script type="module">
-      import * as THREE from "three";
-      import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-
-      const container = document.getElementById("container");
-      const canvas = document.getElementById("scene");
       const message = document.getElementById("message");
 
       // Check WebGL support
       if (!WebGL2RenderingContext) {
         message.innerText = "WebGL is not supported on this device.";
       } else {
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(
-          75,
-          window.innerWidth / window.innerHeight,
-          0.1,
-          1000
-        );
-
-        const renderer = new THREE.WebGLRenderer({
-          canvas: canvas,
-          antialias: true,
-        });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(window.devicePixelRatio);
-
-        // Computer parts
-        const monitorGeometry = new THREE.BoxGeometry(2, 1.5, 0.1);
-        const caseGeometry = new THREE.BoxGeometry(0.5, 0.3, 0.6);
-        const keyboardGeometry = new THREE.PlaneGeometry(1.5, 0.5);
-
-        const material = new THREE.MeshLambertMaterial({ color: 0x333333 });
-
-        const monitor = new THREE.Mesh(monitorGeometry, material);
-        const computerCase = new THREE.Mesh(caseGeometry, material);
-        const keyboard = new THREE.Mesh(
-          keyboardGeometry,
-          new THREE.MeshLambertMaterial({ color: 0x666666 })
-        );
-
-        monitor.position.set(0, 0.75, -1);
-        computerCase.position.set(-0.8, 0.15, -1);
-        keyboard.position.set(0, -0.1, -0.5);
-        keyboard.rotation.x = -Math.PI / 2;
-
-        scene.add(monitor);
-        scene.add(computerCase);
-        scene.add(keyboard);
-
-        // Lighting
-        const ambientLight = new THREE.AmbientLight(0x404040);
-        scene.add(ambientLight);
-
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
-        directionalLight.position.set(1, 1, 1);
-        scene.add(directionalLight);
-
-        camera.position.z = 3;
-
-        const controls = new OrbitControls(camera, renderer.domElement);
-        controls.enableDamping = true;
-        controls.dampingFactor = 0.05;
-
-        function animate() {
-          requestAnimationFrame(animate);
-          controls.update();
-          renderer.render(scene, camera);
-        }
-
-        animate();
-
-        window.addEventListener("resize", () => {
-          const newWidth = window.innerWidth;
-          const newHeight = window.innerHeight;
-
-          camera.aspect = newWidth / newHeight;
-          camera.updateProjectionMatrix();
-
-          renderer.setSize(newWidth, newHeight);
-        });
+        message.innerText = "WebGL is supported, but the 3D scene was removed.";
       }
     </script>
   </body>

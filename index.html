@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>blue-red-and-white</title>
     <script
+      rel="prefetch"
       src="https://kit.fontawesome.com/771e6c66d5.js"
       crossorigin="anonymous"
     ></script>
@@ -32,23 +33,93 @@
       >
     </header>
     <main>
-      <div class="izquierda">
+      <!-- <div class="izquierda">
         <h3>this is a header</h3>
         <p>adding some text inside a paragraph</p>
       </div>
       <div class="right-block">
         <h3>this is a heading r</h3>
         <p>adding some filling text</p>
+      </div> -->
+      <div class="cimatic-back">
+        <img class="image-carousel">
+          <img src="./assets/images/tinyCreature.webp" alt="Image 1">
+          <img src="./assets/images/soft-fur.webp" alt="Image 2">
+          <img src="./assets/images/ferociousFox.webp" alt="Image 3">
+        </div>
+        <div class="feroFox-cont">
+          <h1>The Scourge of the Empire - The Tale of Vraxxis, the Crimson Fang</h1>
+
+          <p>
+            Legends whisper of a shadow in the wilds, a force of nature born from
+            blood and vengeance. Vraxxis, the Crimson Fang, is no ordinary
+            beast—it is a fox-like predator with fur dark as the abyss and eyes
+            that burn like molten gold. Clad in the scars of countless battles,
+            its body moves like flowing fire, an omen of destruction to those who
+            dare stand in its path.
+          </p>
+            
+          <p>
+            Once, Vraxxis was no enemy of the Empire. It>
+            was born in the sacred Sylvannoth Glades, where the spirits of nature
+            wove harmony between man and beast. But the Emperor, in his insatiable
+            thirst for dominion, set fire to the Glades, claiming the land as his
+            own. The rivers ran black with ash, and the towering trees crumbled to
+            dust. Vraxxis watched as its kin were hunted, their pelts worn as
+            trophies by the Imperial elite.
+          </p>
+          
+          <span>On that day, the Crimson Fang was born.</span>
+          <p>
+            Now, Vraxxis is a storm of vengeance, a nightmare that lurks
+          just beyond the reach of torchlight. It slaughters imperial battalions
+          with cunning ambushes, its claws sharper than steel, its fangs
+          drenched in the blood of oppressors. No walls can hold it, no army can
+          subdue it. Whispers spread through the Empire—stories of an
+          unstoppable hunter who rends flesh from bone, who moves unseen through
+          the night, and who will not rest until the Emperor himself drowns in
+          his own tyranny.
+          </p>
+          <p>
+            Some say it is merely a beast, driven by rage. Others
+            believe Vraxxis has grown beyond the mortal realm, now wielding the
+            forgotten magic of the Sylvannoth. The Empire calls it a demon. The
+            oppressed call it salvation. No matter what name they give it, one
+            truth remains: **The Crimson Fang will not stop until the Empire
+            burns.** --- Let me know if you'd like more details or adjustments!
+          </p>
+          
+        </div>
       </div>
     </main>
+    <button id="theme-toggle">Toggle Theme</button>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        // Hamburger menu
         const hamburger = document.querySelector(".hamburger");
         const nav = document.querySelector(".mn-nav");
 
         hamburger.addEventListener("click", function () {
           nav.style.display = nav.style.display === "block" ? "none" : "block";
         });
+
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+          themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            
+            // Save theme preference
+            const isDarkTheme = document.body.classList.contains('dark-theme');
+            localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
+          });
+
+          // Load saved theme preference
+          const savedTheme = localStorage.getItem('theme');
+          if (savedTheme === 'dark') {
+            document.body.classList.add('dark-theme');
+          }
+        }
       });
     </script>
   </body>
